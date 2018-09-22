@@ -22,10 +22,3 @@ curl -X POST  \
  --data "@test/fixtures/merge-request-hook.json" \
  http://localhost.autozone.com:3000/gitlab/hooks
  
-
-curl -i \
-    -H "Accept: application/json" \
-    -X POST -d '
-    
-    '
-    http://localhost:8080/xx/xxx/xxxx
