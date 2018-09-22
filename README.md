@@ -1,1 +1,7 @@
-cf app mr-deployer
+
+Recall user info
+
+```bash
+cf dev status
+```
+

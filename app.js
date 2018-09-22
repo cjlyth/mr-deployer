@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 
+const bodyParser = require("body-parser");
 const shrinkRay = require('shrink-ray');
 
 const isProduction = 'production' === process.env.NODE_ENV;
@@ -18,6 +19,9 @@ var app = express();
 app.set('etag', isProduction);
 app.use((req, res, next) => { res.removeHeader('X-Powered-By'); next(); });
 app.use(shrinkRay());
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
