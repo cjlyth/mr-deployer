@@ -8,8 +8,6 @@ var app = require('../app');
 var debug = require('debug')('mr-deployer:server');
 var http = require('http');
 
-const browserSync = require('browser-sync');
-
 const isProduction = 'production' === process.env.NODE_ENV;
 
 /**
@@ -91,22 +89,4 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-
-  if(!isProduction) {
-      // https://ponyfoo.com/articles/a-browsersync-primer#inside-a-node-application
-      // .{html,js,css}
-      browserSync({
-          files: [
-              'public/',
-              'routes/',
-              'views',
-              'app.js'
-          ],
-          online: false,
-          open: false,
-          port: port + 1,
-          proxy: 'localhost:' + port,
-          ui: false
-      });
-  }
 }

@@ -14,9 +14,10 @@ cf dev start
 docker rm -f gitlab
 #    --restart always \
 mkdir -p $HOME/gitlab/{config,logs,data}
+#    --env GITLAB_OMNIBUS_CONFIG="external_url 'http://local-git.autozone.com:9080/'; " \
+
 docker run --detach \
     --hostname local-git.autozone.com \
-    --env GITLAB_OMNIBUS_CONFIG="external_url 'http://local-git.autozone.com/'; " \
     --publish 9443:443 --publish 9080:80 --publish 9022:22 \
     --name gitlab \
     --restart always \

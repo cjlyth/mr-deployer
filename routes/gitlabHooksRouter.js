@@ -8,8 +8,18 @@ router.get('/', function(req, res, next) {
     res.send('gitlab hooks');
 });
 
-app.post('/',function(request,response){
-    console.log(request.body);
+
+router.get('/test', function(req, res, next) {
+    res.send({ user: 'tobi' });
+});
+
+
+
+router.post('/',function(req,res){
+    console.log(req.body);
+    // res.send('/');
+    res.set('Content-Type', 'application/json');
+    res.send(req.body);
 });
 
 module.exports = router;
