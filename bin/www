@@ -96,7 +96,12 @@ function onListening() {
       // https://ponyfoo.com/articles/a-browsersync-primer#inside-a-node-application
       // .{html,js,css}
       browserSync({
-          files: ['**/*'],
+          files: [
+              'public/',
+              'routes/',
+              'views',
+              'app.js'
+          ],
           online: false,
           open: false,
           port: port + 1,
