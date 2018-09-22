@@ -5,6 +5,7 @@ const isProduction = 'production' === process.env.NODE_ENV;
 
 var path = require('path');
 var cookieParser = require('cookie-parser');
+
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');

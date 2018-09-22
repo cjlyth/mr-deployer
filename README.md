@@ -12,6 +12,7 @@ cf dev status
 # test PCF
 curl -i -X POST \
  -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
  --data "@test/fixtures/merge-request-hook.json" \
  http://mr-deployer-chatty-raven.local.pcfdev.io/gitlab/hooks
  
@@ -19,6 +20,14 @@ curl -i -X POST \
 
 curl -X POST  \
  -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
  --data "@test/fixtures/merge-request-hook.json" \
  http://localhost.autozone.com:3000/gitlab/hooks
  
+
+
+curl -X POST   \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{"id": 999}' \
+  http://localhost.autozone.com:3000/gitlab/hooks
