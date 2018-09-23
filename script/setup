@@ -9,7 +9,8 @@ cd "$(dirname "$0")/.."
 
 script/bootstrap
 
-cf login -u user -p pass -a api.local.pcfdev.io --skip-ssl-validation
+#cf login -u user -p pass -a api.local.pcfdev.io --skip-ssl-validation
+cf login -a api.sys.sandbox.mem.cloud.autozone.com --skip-ssl-validation –sso
 
 if [ -s mr-deployer_manifest.yml ];then
   cf push mr-deployer -c "node ./bin/www"

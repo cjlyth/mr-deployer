@@ -1,4 +1,7 @@
-node_modules/
 script/
 test/
 gitlab/
+*.iml
+*.ipr
+*.iws
+httpRequests

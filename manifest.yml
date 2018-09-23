@@ -2,12 +2,13 @@ applications:
 - name: mr-deployer
   buildpacks:
   - https://github.com/cloudfoundry/nodejs-buildpack
-  command: node ./bin/www
-  disk_quota: 512M
+  disk_quota: 1G
   instances: 1
   memory: 1G
   routes:
-  - route: mr-deployer-chatty-raven.local.pcfdev.io
+  - route: mr-deployer.apps.sandbox.mem.cloud.autozone.com
   stack: cflinuxfs2
   env:
     NODE_ENV: production
+    http_proxy: http://proxy.autozone.com:8080
+    https_proxy: http://proxy.autozone.com:8080

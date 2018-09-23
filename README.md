@@ -31,3 +31,19 @@ curl -X POST   \
   -H "Content-Type: application/json" \
   -d '{"id": 999}' \
   http://localhost.autozone.com:3000/gitlab/hooks
+
+
+
+http://mr-deployer.apps.sandbox.mem.cloud.autozone.com
+# Create a spring config service
+
+```bash
+cf create-service p-config-server standard mr-deployer-config
+
+
+cf service mr-deployer-config
+https://spring-cloud-broker.apps.sandbox.mem.cloud.autozone.com/dashboard/p-config-server/7e098430-0aab-486c-88af-dbd96e381c41
+
+```
+
+
